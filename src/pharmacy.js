@@ -41,7 +41,7 @@ export class Drug {
    * @param {number} value
    */
   setBenefit(value) {
-    this.benefit = value < 0 ? 0 : value;
+    this.benefit = value;
   }
 
   /**
