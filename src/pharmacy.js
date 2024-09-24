@@ -45,11 +45,11 @@ export class Drug {
   }
 
   /**
-   * @param {number} value
+   * @param {number} day
    * @return {boolean}
    */
-  expiresInIsLessThanOrEqual(value) {
-    return this.expiresIn <= value;
+  expiresInIsLessThanOrEqual(day) {
+    return this.expiresIn <= day;
   }
 }
 
