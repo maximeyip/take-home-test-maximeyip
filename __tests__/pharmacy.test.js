@@ -93,4 +93,24 @@ describe("Pharmacy", () => {
       );
     });
   });
+
+  describe("Dafalgan", () => {
+    it("should decrease the benefit by 2", () => {
+      expect(new Pharmacy([new Drug(Drugs.DAFALGGAN, 2, 3)]).updateBenefitValue()).toEqual(
+        [new Drug(Drugs.DAFALGGAN, 1, 1)],
+      );
+    });
+
+    it("should not decrease the benefit below 0", () => {
+      expect(new Pharmacy([new Drug(Drugs.DAFALGGAN, 2, 0)]).updateBenefitValue()).toEqual(
+        [new Drug(Drugs.DAFALGGAN, 1, 0)],
+      );
+    });
+
+    it("should decrease by 4 when drug is expired", () => {
+      expect(new Pharmacy([new Drug(Drugs.DAFALGGAN, 0, 4)]).updateBenefitValue()).toEqual(
+        [new Drug(Drugs.DAFALGGAN, -1, 0)],
+      );
+    });
+  });
 });
